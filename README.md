@@ -110,9 +110,10 @@ src/
   components/
     Carousel.js
     ChartWidget.js
+    CountryLanguageInsights.js
     FilterPanel.js
+    GenreBarChart.js
     Leaderboard.js
-    Modal.js
     MovieDetailsCard.js
   api/
     api.js

@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+# Movie Dashboard Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is a responsive React-based dashboard application that visualizes insights from a movie dataset. It includes features such as filterable movie data, interactive charts, a carousel for top movies, and a modal with detailed movie information.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Search and Filter Panel**:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   - Allows filtering by year, genre, language, IMDb rating, Oscar nominations, and Oscar wins.
+   - Includes a reset button to clear all filters.
 
-### `npm test`
+2. **Oscar Statistics Overview**:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   - Displays a pie chart showing the distribution of Oscar nominations and wins.
 
-### `npm run build`
+3. **Top Performers**:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   - Ranks movies based on their performance (e.g., Oscar wins).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Country and Language Insights**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   - A pie chart visualizes the count of movies by country and language.
 
-### `npm run eject`
+5. **Carousel for Movie Highlights**:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   - Shows top-rated movies with IMDb rating and cast.
+   - Allows users to click on a movie card to open a modal with detailed information.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6. **Movie Details Modal**:
+   - Displays comprehensive details about the selected movie.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Design Decisions
 
-## Learn More
+### 1. **Architecture**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- The project uses a component-based architecture to ensure modularity and reusability.
+- Data fetching is centralized, and state management is handled using React's `useState` and `useEffect` hooks.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2. **Styling**
 
-### Code Splitting
+- TailwindCSS is used for styling to ensure a consistent and responsive design.
+- Utility classes simplify CSS management and reduce code bloat.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3. **Charts and Visualizations**
 
-### Analyzing the Bundle Size
+- **Chart.js** is used for creating interactive and visually appealing charts.
+- Components are optimized to re-render only when necessary.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 4. **Carousel and Modal**
 
-### Making a Progressive Web App
+- A custom carousel component provides a smooth left-to-right scrolling experience.
+- The modal enhances user interaction by dynamically displaying selected movie details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Trade-offs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 1. **Data Fetching**
 
-### Deployment
+- Chose Axios for simplicity and reliability. Trade-off: Increased bundle size compared to Fetch API.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 2. **Charts Library**
 
-### `npm run build` fails to minify
+- Selected Chart.js for its flexibility and community support. Trade-off: Slightly heavier than alternatives like Recharts.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 3. **State Management**
+
+- Used React's built-in state management instead of Redux or Context API for simplicity. Trade-off: Limited scalability for larger datasets or complex state handling.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm or Yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+---
+
+## Folder Structure
+
+```
+src/
+  components/
+    Carousel.js
+    ChartWidget.js
+    FilterPanel.js
+    Leaderboard.js
+    Modal.js
+    MovieDetailsCard.js
+  api/
+    api.js
+  App.js
+  index.js
+```
+
+---
+
+## Future Enhancements
+
+1. Add pagination for large datasets.
+2. Implement advanced state management using Redux or Context API.
+3. Include more visualizations such as bar charts and heatmaps.
+4. Improve accessibility features (e.g., keyboard navigation).
+
+---
+
+## Author
+
+Vikash Kumar
